@@ -28,11 +28,11 @@
 	<platform name="android">
 		<hook type="before_plugin_install" src="hooks/outsystems/handle_google_services.js" />
 		<hook type="after_plugin_install" src="hooks/outsystems/google_services_cleanup.js" />
-	
+	<!--
 		<config-file>
 			<access origin="*.pushwoosh.com" />
 		</config-file>
-
+-->
 		<config-file target="AndroidManifest.xml" parent="/manifest/application">
 			<meta-data android:name="com.pushwoosh.log_level" android:value="$LOG_LEVEL" />
 			<meta-data android:name="com.pushwoosh.foreground_push" android:value="$ANDROID_FOREGROUND_PUSH" />
@@ -117,11 +117,11 @@
 				<param name="wp-package" value="PushNotification"/>
 			</feature>
 		</config-file>
-<!--
+
 		<config-file>
 			<access origin="*.pushwoosh.com" />
 		</config-file>
--->
+
 		<config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
 			<Capability Name="ID_CAP_PUSH_NOTIFICATION"/>
 			<Capability Name="ID_CAP_IDENTITY_DEVICE"/>
